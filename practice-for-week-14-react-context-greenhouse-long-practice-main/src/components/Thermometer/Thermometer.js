@@ -4,18 +4,15 @@ import { useClimate } from "../../context/ClimateContext";
 import { useState } from 'react';
 
 function Thermometer() {
-  // console.log(useClimate().climateValue.temperature);
   const { climateValue, setClimateValue } = useClimate();
   const { temperature, humidity } = climateValue;
   const [temp, setTemp ] = useState(temperature);
-  // console.log(temp);
   const handleTemperatureChange = (newTemp) => {
     setTemp(newTemp);
     setClimateValue({temperature: newTemp, humidity: humidity})
   }
 
   console.log(climateValue.temperature)
-
   return (
     <section>
       <h2>Thermometer</h2>
